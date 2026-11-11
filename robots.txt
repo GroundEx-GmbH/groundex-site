@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://emi0534.github.io/groundex-site/sitemap.xml
+Sitemap: https://groundex-gmbh.github.io/groundex-site/sitemap.xml
