@@ -27,10 +27,12 @@
   /* 3) Hero altına akan bant */
   var hero = document.getElementById('top');
   if(hero){
-    var words = ['Verkauf','Vermietung','Reparatur','Wartung','Pflegetechnik','Direkt per WhatsApp'];
-    var row = words.map(function(w){return '<span>'+w+'</span>';}).join('');
+    var W = {de:['Verkauf','Vermietung','Reparatur','Wartung','Pflegetechnik','Direkt per WhatsApp'],tr:['Satış','Kiralama','Tamir','Bakım','Bakım ekipmanları','Doğrudan WhatsApp'],en:['Sale','Rental','Repair','Maintenance','Grounds care','Direct via WhatsApp']};
+    function rowFor(l){ return (W[l]||W.de).map(function(w){return '<span>'+w+'</span>';}).join(''); }
     var t = document.createElement('div'); t.className = 'gx-ticker'; t.setAttribute('aria-hidden','true');
-    t.innerHTML = '<div class="gx-ticker-track">' + row + row + row + row + '</div>';
+    function fill(){ var r = rowFor(document.documentElement.lang); t.innerHTML = '<div class="gx-ticker-track">' + r + r + r + r + '</div>'; }
+    fill();
+    new MutationObserver(fill).observe(document.documentElement,{attributes:true,attributeFilter:['lang']});
     hero.insertAdjacentElement('afterend', t);
 
     /* 4) Fareyi izleyen ışık */

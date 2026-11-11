@@ -24,7 +24,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src 'self' data: https:; connect-src https://docs.google.com https://*.googleusercontent.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; script-src 'self' 'unsafe-inline'; base-uri 'none'; form-action 'none'; frame-src https://www.google.com; frame-ancestors 'none';">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src 'self' data: https:; connect-src https://docs.google.com https://*.googleusercontent.com; style-src 'self' 'unsafe-inline'; font-src 'self'; script-src 'self' 'unsafe-inline'; base-uri 'none'; form-action 'none'; frame-src https://www.google.com;">
 <meta name="referrer" content="strict-origin-when-cross-origin">
 <title>GroundEx GmbH — Landschaftsbau &amp; Maschinentechnik: Verkauf, Vermietung, Service</title>
 <meta name="description" content="GroundEx GmbH beliefert Landschaftsbauer, Kommunen und Handwerksbetriebe mit Pflegetechnik zum Kauf und stellt schwere Maschinen zur Vermietung bereit. Eigener Reparaturservice, direkter Kontakt per WhatsApp.">
@@ -35,10 +35,11 @@
 <meta property="og:title" content="GroundEx GmbH — Landschaftsbau & Maschinentechnik">
 <meta property="og:description" content="Maschinen & Geräte zum Kauf und zur Vermietung — plus eigener Reparaturservice. Direkt per WhatsApp erreichbar.">
 <meta property="og:image" content="https://groundex-gmbh.github.io/groundex-site/images/social-preview.jpg">
+<meta property="og:site_name" content="GroundEx GmbH">
+<meta property="og:locale" content="de_DE">
+<meta name="theme-color" content="#1c1f1e">
 <meta property="og:url" content="https://groundex-gmbh.github.io/groundex-site/">
 <meta name="twitter:card" content="summary_large_image">
-<!-- Google Search Console doğrulama: kendi kodunu aldığında buraya yapıştır -->
-<meta name="google-site-verification" content="BURAYA_GOOGLE_SEARCH_CONSOLE_KODUNU_YAPISTIR">
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -53,13 +54,14 @@
     "addressCountry": "DE"
   },
   "telephone": "+491637216123",
+  "email": "info@groundex.de",
+  "image": "https://groundex-gmbh.github.io/groundex-site/images/social-preview.jpg",
   "url": "https://groundex-gmbh.github.io/groundex-site/",
   "openingHours": "Mo-Fr 08:00-17:00"
 }
 </script>
 <link rel="icon" type="image/png" href="images/favicon.png">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;600;700&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="fonts/fonts.css">
 <style>
   :root{
     --asphalt:#1c1f1e;
@@ -457,7 +459,28 @@
 </style>
   <link rel="stylesheet" href="groundex-extras.css">
 <script src="groundex-extras.js" defer></script>
+<style>
+  .hero h1{font-size:clamp(34px,5.2vw,60px);max-width:980px;}
+  .logo img{height:54px;}
+  .map-wrap{max-width:1180px;margin:28px auto 0;line-height:1.5;}
+  .map-consent{display:flex;flex-direction:column;align-items:center;gap:14px;padding:48px 24px;text-align:center;background:#e2ddd0;font-size:14px;color:#3a4750;}
+  .map-consent p{max-width:560px;}
+  .map-consent a{color:var(--orange);text-decoration:underline;}
+  .map-wrap iframe{display:block;}
+  .faq-q:focus-visible,.filter-btn:focus-visible,.lang-btn:focus-visible,.menu-toggle:focus-visible,a:focus-visible,button:focus-visible{outline:3px solid var(--yellow);outline-offset:2px;}
+  @media(max-width:860px){
+    header.nav-open nav.links{display:flex;flex-direction:column;position:absolute;top:100%;left:0;right:0;background:var(--asphalt);padding:8px 24px 18px;border-bottom:1px solid var(--line);gap:0;}
+    header.nav-open nav.links a{padding:14px 0;font-size:16px;border-bottom:1px solid var(--line);}
+  }
+  @media(max-width:640px){
+    .nav-right .wa-btn{display:none;}
+    .logo img{height:40px;padding:2px 6px;}
+    .navbar{padding:10px 16px;}
+  }
+</style>
+</head>
 <body>
+<noscript><p style="padding:16px;background:#fff3b0;color:#1c1f1e;font:14px sans-serif">Diese Website benötigt JavaScript. GroundEx GmbH · Robert-Bosch-Straße 14 · 42477 Radevormwald · Tel./WhatsApp +49 163 7216123 · info@groundex.de</p></noscript>
 
 <header>
   <div class="navbar">
@@ -551,17 +574,17 @@
   </div>
   <div class="video-grid reveal">
     <div class="video-card">
-      <video controls preload="metadata" poster="videos/demo1-poster.jpg" playsinline>
+      <video controls preload="metadata" poster="videos/demo1-poster.jpg" playsinline aria-label="GroundEx Maschinen im Einsatz – Video 1">
         <source src="videos/demo1.mp4" type="video/mp4">
       </video>
     </div>
     <div class="video-card">
-      <video controls preload="metadata" poster="videos/demo2-poster.jpg" playsinline>
+      <video controls preload="metadata" poster="videos/demo2-poster.jpg" playsinline aria-label="GroundEx Maschinen im Einsatz – Video 2">
         <source src="videos/demo2.mp4" type="video/mp4">
       </video>
     </div>
     <div class="video-card">
-      <video controls preload="metadata" poster="videos/demo3-poster.jpg" playsinline>
+      <video controls preload="metadata" poster="videos/demo3-poster.jpg" playsinline aria-label="GroundEx Maschinen im Einsatz – Video 3">
         <source src="videos/demo3.mp4" type="video/mp4">
       </video>
     </div>
@@ -655,7 +678,7 @@
       <p data-i18n="hours_value"></p>
     </div>
   </div>
-  <div class="map-wrap"><iframe id="map-frame" title="GroundEx GmbH – Google Maps" loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen></iframe></div>
+  <div class="map-wrap" id="map-wrap"><div class="map-consent"><p data-i18n="map_consent_text"></p><button type="button" class="wa-btn" id="map-load" data-i18n="map_consent_btn"></button><a href="datenschutz.html" data-i18n="footer_datenschutz"></a></div></div>
 </section>
 
 <footer>
@@ -700,9 +723,9 @@
       hero_h1_1:"Geräte & Maschinen für ", hero_h1_em:"den Platz, den Sie bearbeiten.",
       hero_lead:"GroundEx beliefert Landschaftsbauer, Kommunen und Handwerksbetriebe mit Pflegetechnik zum Kauf — und stellt schwere Maschinen für den Einsatz bereit, wenn Sie sie brauchen.",
       hero_cta1:"Fahrzeuge ansehen", hero_cta2:"Direkt per WhatsApp anfragen",
-      tagline:"Garantie für Qualität und Zuverlässigkeit",
+      tagline:"Qualität und Zuverlässigkeit",
       stat1_label:"Sprachen · DE / TR / EN", stat2_label:"Antwortzeit auf WhatsApp", stat3_label:"Kommunen & Betriebe", stat4_num:"DE", stat4_label:"Lieferung & Abholung",
-      svc1_num:"01 / Verkauf", svc1_title:"Verkauf", svc1_desc:"Geprüfte Baumaschinen, Nutzfahrzeuge und Arbeitsgeräte zum Kauf — mit klaren Angaben zu Zustand, Baujahr und Betriebsstunden.",
+      svc1_num:"01 / Verkauf", svc1_title:"Verkauf", svc1_desc:"Baumaschinen, Nutzfahrzeuge und Arbeitsgeräte zum Kauf — mit klaren Angaben zu Zustand, Baujahr und Betriebsstunden.",
       svc2_num:"02 / Vermietung", svc2_title:"Vermietung", svc2_desc:"Kurzfristig oder projektbezogen mieten, ohne Kapital zu binden. Flexible Zeiträume, transparente Preise.",
       svc3_num:"03 / Service", svc3_title:"Reparatur & Wartung", svc3_desc:"Eigene Werkstatt für Reparatur, Wartung und Instandsetzung — auch für Maschinen, die nicht bei uns gekauft wurden.",
       fz_eyebrow:"Bestand", fz_title:"Fahrzeuge & Maschinen",
@@ -719,7 +742,7 @@
       faq_eyebrow:"Fragen", faq_title:"Häufig gefragt",
       faq1_q:"Kann ich eine Maschine erst mieten und später kaufen?", faq1_a:"Ja, sprechen Sie uns einfach darauf an — wir prüfen gemeinsam, ob eine Anrechnung der Mietkosten möglich ist.",
       faq2_q:"Übernehmen Sie auch Reparaturen an Maschinen, die nicht von GroundEx sind?", faq2_a:"Ja, unsere Werkstatt repariert und wartet auch Fremdmaschinen und Fahrzeuge.",
-      faq3_q:"Wie schnell bekomme ich eine Antwort auf WhatsApp?", faq3_a:"In der Regel innerhalb weniger Stunden während unserer Geschäftszeiten.",
+      faq3_q:"Wie schnell bekomme ich eine Antwort auf WhatsApp?", faq3_a:"In der Regel innerhalb von 24 Stunden an Werktagen.",
       faq4_q:"Liefern Sie Maschinen auch an?", faq4_a:"Je nach Standort und Maschine ist eine Lieferung möglich — fragen Sie einfach bei der Anfrage danach.",
       faq5_q:"Bieten Sie auch Einweisungen in die Bedienung an?", faq5_a:"Ja, bei Übergabe erklären wir die wichtigsten Funktionen — bei Bedarf auch ausführlicher vor Ort.",
       cases_eyebrow:"Referenzen", cases_title:"Ausgewählte Projekte", cases_tag:"Beispiel", cases_media_label:"Foto folgt",
@@ -734,14 +757,11 @@
       addr_label:"Adresse", addr_maps:"Auf Google Maps ansehen →", contact_label:"Kontakt", hours_label:"Erreichbarkeit", hours_value:"Mo–Fr: 08:00–17:00 · Sa: nach Vereinbarung",
       footer_text:"Baumaschinen & Fahrzeuge: Verkauf, Vermietung, Service.",
       footer_impressum:"Impressum", footer_datenschutz:"Datenschutz", footer_agb:"AGB", footer_widerruf:"Widerruf",
-      legal_warning:"Platzhalter — vor Live-Schaltung mit echten Firmendaten ersetzen (gesetzlich vorgeschrieben nach § 5 TMG).",
-      legal_represented:"Vertreten durch", legal_register:"Handelsregister", legal_vat:"USt-IdNr.",
-      legal_warning_dsgvo:"Platzhalter — vor Live-Schaltung durch eine vollständige, rechtsgeprüfte Datenschutzerklärung ersetzen (DSGVO).",
-      legal_dsgvo_body:"Diese Website verarbeitet grundsätzlich keine personenbezogenen Daten über Formulare. Kontaktaufnahmen erfolgen freiwillig per WhatsApp, Telefon oder E-Mail. Details zu Cookies, eingebundenen Diensten (z. B. Google Fonts) und Ihren Rechten nach DSGVO folgen hier in der finalen Fassung.",
       cat_all:"Alle", cat_baumaschinen:"Baumaschinen", cat_fahrzeuge:"Fahrzeuge", cat_werkzeuge:"Werkzeuge", cat_pflege:"Pflegetechnik",
       type_kauf:"Kauf", type_miete:"Miete", type_kauf_miete:"Kauf & Miete",
       badge_example:"BEISPIEL", badge_used:"Gebraucht", detail_btn:"Anfragen →",
-      wa_default:"Merhaba, GroundEx web sitesi üzerinden yazıyorum.",
+      wa_default:"Hallo, ich schreibe Ihnen über die GroundEx-Website.",
+      menu_label:"Menü", map_consent_text:"Zum Anzeigen der Karte wird eine Verbindung zu Google Maps hergestellt. Dabei werden Daten (z. B. Ihre IP-Adresse) an Google übermittelt.", map_consent_btn:"Karte laden",
       wa_inquiry:(n)=>`Hallo, ich interessiere mich für: ${n}`,
     },
     tr: {
@@ -750,9 +770,9 @@
       hero_h1_1:"Sahanız için ", hero_h1_em:"doğru makine ve ekipman.",
       hero_lead:"GroundEx; peyzajcılara, belediyelere ve zanaat işletmelerine bakım ekipmanları satar — ihtiyaç duyduğunuzda ağır makineleri de kiralık olarak hazır tutar.",
       hero_cta1:"Araçları incele", hero_cta2:"WhatsApp'tan hemen sor",
-      tagline:"Kalite ve güvenilirlik garantisi",
+      tagline:"Kalite ve güvenilirlik",
       stat1_label:"Dil · DE / TR / EN", stat2_label:"WhatsApp yanıt süresi", stat3_label:"Belediye & işletmeler", stat4_num:"DE", stat4_label:"Teslimat & teslim alma",
-      svc1_num:"01 / Satış", svc1_title:"Satış", svc1_desc:"Kontrolden geçmiş iş makineleri, araçlar ve ekipmanlar — durum, model yılı ve çalışma saatleri net şekilde belirtilir.",
+      svc1_num:"01 / Satış", svc1_title:"Satış", svc1_desc:"İş makineleri, araçlar ve ekipmanlar satın alma için — durum, model yılı ve çalışma saatleri net şekilde belirtilir.",
       svc2_num:"02 / Kiralama", svc2_title:"Kiralama", svc2_desc:"Kısa süreli veya proje bazlı kiralama, sermayenizi bağlamadan. Esnek süreler, şeffaf fiyatlandırma.",
       svc3_num:"03 / Servis", svc3_title:"Tamir & Bakım", svc3_desc:"Kendi atölyemizde tamir, bakım ve onarım — bizden alınmamış makineler için de geçerlidir.",
       fz_eyebrow:"Envanter", fz_title:"Araçlar & Makineler",
@@ -769,7 +789,7 @@
       faq_eyebrow:"Sorular", faq_title:"Sıkça sorulanlar",
       faq1_q:"Bir makineyi önce kiralayıp sonra satın alabilir miyim?", faq1_a:"Evet, bizimle iletişime geçin — kira bedelinin satış fiyatından düşülüp düşülemeyeceğine birlikte bakarız.",
       faq2_q:"GroundEx'e ait olmayan makinelerin tamirini de yapıyor musunuz?", faq2_a:"Evet, atölyemiz başka firmalardan alınmış makine ve araçların da tamir ve bakımını yapar.",
-      faq3_q:"WhatsApp'a ne kadar sürede dönüş yapıyorsunuz?", faq3_a:"Genellikle çalışma saatleri içinde birkaç saat içinde dönüş yapıyoruz.",
+      faq3_q:"WhatsApp'a ne kadar sürede dönüş yapıyorsunuz?", faq3_a:"Genellikle iş günlerinde 24 saat içinde dönüş yapıyoruz.",
       faq4_q:"Makine teslimatı yapıyor musunuz?", faq4_a:"Konuma ve makineye göre teslimat mümkün olabilir — talep sırasında bunu belirtmeniz yeterli.",
       faq5_q:"Kullanım eğitimi de veriyor musunuz?", faq5_a:"Evet, teslimat sırasında temel kullanım bilgisi veriyoruz — gerekirse yerinde daha detaylı gösterebiliriz.",
       cases_eyebrow:"Referanslar", cases_title:"Seçili Projeler", cases_tag:"Örnek", cases_media_label:"Fotoğraf eklenecek",
@@ -784,14 +804,11 @@
       addr_label:"Adres", addr_maps:"Google Haritalar'da aç →", contact_label:"İletişim", hours_label:"Çalışma saatleri", hours_value:"Pzt–Cuma: 08:00–17:00 · Cumartesi: randevu ile",
       footer_text:"İş makineleri & araçlar: satış, kiralama, servis.",
       footer_impressum:"Yasal Bilgiler (Impressum)", footer_datenschutz:"Gizlilik Politikası", footer_agb:"Kullanım Koşulları", footer_widerruf:"Cayma Hakkı",
-      legal_warning:"Bu bir yer tutucudur — site yayına alınmadan önce gerçek firma bilgileriyle değiştirilmeli (Almanya'da § 5 TMG gereği zorunludur).",
-      legal_represented:"Yetkili temsilci", legal_register:"Ticaret sicil no", legal_vat:"KDV no",
-      legal_warning_dsgvo:"Bu bir yer tutucudur — site yayına alınmadan önce eksiksiz, hukuki olarak kontrol edilmiş bir gizlilik metniyle değiştirilmeli (KVKK/DSGVO).",
-      legal_dsgvo_body:"Bu web sitesi form yoluyla kişisel veri toplamaz. İletişim WhatsApp, telefon veya e-posta üzerinden gönüllü olarak kurulur. Çerezler, kullanılan servisler (örn. Google Fonts) ve haklarınıza dair detaylar sitenin nihai sürümünde burada yer alacaktır.",
       cat_all:"Tümü", cat_baumaschinen:"İş Makineleri", cat_fahrzeuge:"Araçlar", cat_werkzeuge:"Ekipmanlar", cat_pflege:"Bakım Ekipmanları",
       type_kauf:"Satılık", type_miete:"Kiralık", type_kauf_miete:"Satılık & Kiralık",
       badge_example:"ÖRNEK", badge_used:"İkinci El", detail_btn:"Sor →",
       wa_default:"Merhaba, GroundEx web sitesi üzerinden yazıyorum.",
+      menu_label:"Menü", map_consent_text:"Haritayı göstermek için Google Maps ile bağlantı kurulur. Bu sırada veriler (ör. IP adresiniz) Google'a aktarılır.", map_consent_btn:"Haritayı yükle",
       wa_inquiry:(n)=>`Merhaba, şununla ilgileniyorum: ${n}`,
     },
     en: {
@@ -800,9 +817,9 @@
       hero_h1_1:"Equipment & machines for ", hero_h1_em:"the ground you work.",
       hero_lead:"GroundEx supplies landscapers, municipalities and trade businesses with grounds care equipment — and keeps heavy machinery ready to rent when you need it.",
       hero_cta1:"View vehicles", hero_cta2:"Ask directly on WhatsApp",
-      tagline:"Guaranteed quality and reliability",
+      tagline:"Quality and reliability",
       stat1_label:"Languages · DE / TR / EN", stat2_label:"Response time on WhatsApp", stat3_label:"Municipalities & businesses", stat4_num:"DE", stat4_label:"Delivery & pickup",
-      svc1_num:"01 / Sale", svc1_title:"Sale", svc1_desc:"Inspected construction machinery, vehicles and equipment for sale — with clear details on condition, year and operating hours.",
+      svc1_num:"01 / Sale", svc1_title:"Sale", svc1_desc:"Construction machinery, vehicles and equipment for sale — with clear details on condition, year and operating hours.",
       svc2_num:"02 / Rental", svc2_title:"Rental", svc2_desc:"Rent short-term or per project without tying up capital. Flexible periods, transparent pricing.",
       svc3_num:"03 / Service", svc3_title:"Repair & Maintenance", svc3_desc:"Our own workshop handles repair, maintenance and servicing — including machines not purchased from us.",
       fz_eyebrow:"Inventory", fz_title:"Vehicles & Machines",
@@ -819,7 +836,7 @@
       faq_eyebrow:"Questions", faq_title:"Frequently asked",
       faq1_q:"Can I rent a machine first and buy it later?", faq1_a:"Yes, just ask us — we'll check together whether rental costs can be credited toward a purchase.",
       faq2_q:"Do you repair machines not bought from GroundEx?", faq2_a:"Yes, our workshop also repairs and services machines and vehicles from other providers.",
-      faq3_q:"How fast do you reply on WhatsApp?", faq3_a:"Usually within a few hours during business hours.",
+      faq3_q:"How fast do you reply on WhatsApp?", faq3_a:"Usually within 24 hours on business days.",
       faq4_q:"Do you deliver machines?", faq4_a:"Depending on location and machine, delivery may be possible — just ask when you inquire.",
       faq5_q:"Do you provide operating instructions?", faq5_a:"Yes, we explain the key functions at handover — a more detailed on-site briefing is available if needed.",
       cases_eyebrow:"References", cases_title:"Selected Projects", cases_tag:"Example", cases_media_label:"Photo coming soon",
@@ -834,14 +851,11 @@
       addr_label:"Address", addr_maps:"Open in Google Maps →", contact_label:"Contact", hours_label:"Hours", hours_value:"Mon–Fri: 8am–5pm · Sat: by appointment",
       footer_text:"Construction machinery & vehicles: sale, rental, service.",
       footer_impressum:"Legal Notice", footer_datenschutz:"Privacy Policy", footer_agb:"Terms", footer_widerruf:"Withdrawal",
-      legal_warning:"Placeholder — replace with real company details before going live (legally required in Germany under § 5 TMG).",
-      legal_represented:"Represented by", legal_register:"Commercial register", legal_vat:"VAT ID",
-      legal_warning_dsgvo:"Placeholder — replace with a complete, legally reviewed privacy policy before going live (GDPR).",
-      legal_dsgvo_body:"This website does not collect personal data through forms. Contact is made voluntarily via WhatsApp, phone or email. Details on cookies, embedded services (e.g. Google Fonts) and your rights under GDPR will appear here in the final version.",
       cat_all:"All", cat_baumaschinen:"Machinery", cat_fahrzeuge:"Vehicles", cat_werkzeuge:"Equipment", cat_pflege:"Grounds Care",
       type_kauf:"For Sale", type_miete:"For Rent", type_kauf_miete:"Sale & Rent",
       badge_example:"SAMPLE", badge_used:"Used", detail_btn:"Inquire →",
       wa_default:"Hello, I'm reaching out via the GroundEx website.",
+      menu_label:"Menu", map_consent_text:"To show the map, a connection to Google Maps is established. Data (e.g. your IP address) is transferred to Google.", map_consent_btn:"Load map",
       wa_inquiry:(n)=>`Hi, I'm interested in: ${n}`,
     }
   };
@@ -870,10 +884,10 @@
     document.getElementById("wa-hero").href = waLink(t.wa_default);
     document.getElementById("wa-contact").href = waLink(t.wa_default);
     const mapsLink = document.getElementById("maps-link");
-    const mapFrame = document.getElementById("map-frame");
-    if(mapFrame && !mapFrame.src) mapFrame.src = "https://www.google.com/maps?q=" + encodeURIComponent(COMPANY_ADDRESS) + "&output=embed";
     if(mapsLink) mapsLink.href = "https://www.google.com/maps/search/?api=1&query=" + encodeURIComponent(COMPANY_ADDRESS);
     document.getElementById("wa-float").href = waLink(t.wa_default);
+    document.documentElement.lang = currentLang;
+    const mt = document.querySelector(".menu-toggle"); if(mt) mt.setAttribute("aria-label", t.menu_label);
     document.querySelectorAll(".lang-btn").forEach(b=>b.classList.toggle("active", b.dataset.lang===currentLang));
   }
 
@@ -907,7 +921,7 @@
         card.className = "card reveal";
         card.innerHTML = `
           <div class="card-media">
-            ${m.image ? `<img src="${m.image}" alt="${escapeHtml(m.name)}">` : icon}
+            ${m.image ? `<img src="${m.image}" alt="${escapeHtml(m.name)}" loading="lazy" decoding="async">` : icon}
             ${(m.images && m.images.length>1) ? `<span class="photo-count">📷 ${m.images.length}</span>` : ""}
             <span class="badge">${typeLabels[m.type]}</span>
             ${m.used ? `<span class="badge example">${t.badge_used}</span>` : ""}
@@ -972,15 +986,15 @@
       const item = document.createElement("div");
       item.className = "faq-item";
       item.innerHTML = `
-        <button class="faq-q">${t["faq"+i+"_q"]}<span class="plus">+</span></button>
+        <button class="faq-q" aria-expanded="false">${t["faq"+i+"_q"]}<span class="plus">+</span></button>
         <div class="faq-a"><p>${t["faq"+i+"_a"]}</p></div>
       `;
       const btn = item.querySelector(".faq-q");
       const ans = item.querySelector(".faq-a");
       btn.onclick = ()=>{
         const isOpen = item.classList.contains("open");
-        document.querySelectorAll(".faq-item").forEach(fi=>{fi.classList.remove("open"); fi.querySelector(".faq-a").style.maxHeight = null;});
-        if(!isOpen){ item.classList.add("open"); ans.style.maxHeight = ans.scrollHeight + "px"; }
+        document.querySelectorAll(".faq-item").forEach(fi=>{fi.classList.remove("open"); fi.querySelector(".faq-a").style.maxHeight = null; fi.querySelector(".faq-q").setAttribute("aria-expanded","false");});
+        if(!isOpen){ item.classList.add("open"); ans.style.maxHeight = ans.scrollHeight + "px"; btn.setAttribute("aria-expanded","true"); }
       };
       list.appendChild(item);
     }
@@ -1057,6 +1071,23 @@
     }, {threshold:0.15});
     document.querySelectorAll(".reveal:not(.in-view)").forEach(el=>io.observe(el));
   }
+
+  // Mobil menü
+  const menuBtn = document.querySelector(".menu-toggle"), siteHeader = document.querySelector("header");
+  function closeMenu(){ siteHeader.classList.remove("nav-open"); menuBtn.textContent = "☰"; menuBtn.setAttribute("aria-expanded","false"); }
+  menuBtn.setAttribute("aria-expanded","false");
+  menuBtn.addEventListener("click", ()=>{ const o = siteHeader.classList.toggle("nav-open"); menuBtn.textContent = o ? "✕" : "☰"; menuBtn.setAttribute("aria-expanded", String(o)); });
+  document.querySelectorAll("nav.links a").forEach(a=>a.addEventListener("click", closeMenu));
+
+  // Google Maps erst nach Klick laden (Zwei-Klick-Lösung, DSGVO)
+  document.getElementById("map-load").addEventListener("click", ()=>{
+    const f = document.createElement("iframe");
+    f.id = "map-frame"; f.title = "GroundEx GmbH – Google Maps"; f.loading = "lazy";
+    f.referrerPolicy = "no-referrer-when-downgrade"; f.allowFullscreen = true;
+    f.style.cssText = "width:100%;height:340px;border:0;";
+    f.src = "https://www.google.com/maps?q=" + encodeURIComponent(COMPANY_ADDRESS) + "&output=embed";
+    document.getElementById("map-wrap").replaceChildren(f);
+  });
 
   setLang("de");
   observeReveals();
